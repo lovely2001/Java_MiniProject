@@ -2,14 +2,14 @@ import javax.swing.*;
 import java.awt.*;  
 import java.awt.event.*;  
   
-class CreateLoginForm extends JFrame implements ActionListener  
+class loginpage extends JFrame implements ActionListener  
 {  
     JButton b1;  
     JPanel newPanel;  
     JLabel userLabel, passLabel;  
-    final JTextField  textField1, textField2;  
+    JTextField  textField1, textField2;  
       
-    CreateLoginForm()  
+    loginpage()  
     {     
           
         userLabel = new JLabel();  
@@ -40,16 +40,15 @@ class CreateLoginForm extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent ae)   
     {  
         String userValue = textField1.getText();        
-        String passValue = textField2.getText();       
+        String passValue = textField2.getText();   
+        dispose();    
         otp page = new otp(1);  
         page.setVisible(true);  
     }
-}        
-class loginpage
-{  
+
     public static void main(String arg[])  
     {  
-    CreateLoginForm form = new CreateLoginForm();  
+    loginpage form = new loginpage();  
     form.setSize(300,100);  //set size of the frame  
     form.setVisible(true);  //make form visible to the user  
       
