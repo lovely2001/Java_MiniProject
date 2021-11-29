@@ -2,14 +2,14 @@ import javax.swing.*;
 import java.awt.*;  
 import java.awt.event.*;  
   
-class Verify extends JFrame implements ActionListener  
+class Verification extends JFrame implements ActionListener  
 {  
     JButton b1;  
     JPanel newPanel;  
     JLabel otpLabel;  
     JTextField  textField;
       
-    Verify()  
+    Verification()  
     {     
         otpLabel = new JLabel();  
         otpLabel.setText("Enter OTP");      
@@ -28,17 +28,17 @@ class Verify extends JFrame implements ActionListener
     
     public void actionPerformed(ActionEvent ae)   
     {  
-     JOptionPane.showMessageDialog(this, "Sucessful login");
+        String user = textField.getText();   
+        JOptionPane.showMessageDialog(this, "Sucessful login"); 
+        dispose();  
+        content pages = new content();  
+        pages.setSize(150,300);
+        pages.setVisible(true);  
     }
-
-}        
-class Verification
-{  
   
     public static void main(String arg[])  
     {  
-    Verify form = new Verify();  
-    form.setSize(300,100);  //set size of the frame  
+    Verification form = new Verification();    
     form.setVisible(true);  //make form visible to the user  
       
     }  

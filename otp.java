@@ -10,7 +10,7 @@ class otp extends JFrame  implements ActionListener
 
         {
             char[] otp1 = generateOTP(length);
-            setSize(350,100);
+            setSize(300,100);
             setTitle("OTP FOR VERIFICATION");
             JLabel l = new JLabel("Your OTP : ");
             add(l);
@@ -38,12 +38,14 @@ class otp extends JFrame  implements ActionListener
         }
 
         public void actionPerformed(ActionEvent ae)   
-       {       
-        Verification page = new Verification();  
-       // page.setvisible(true);  
-        }
+    {    
+        dispose();  
+        Verification pages = new Verification();  
+        pages.setSize(300,100);
+        pages.setVisible(true);  
+    }
         public static void main(String args[])
         {
-        new otp(1);
+        new otp(1); 
         }
 }
