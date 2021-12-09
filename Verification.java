@@ -31,9 +31,7 @@ class Verification extends JFrame implements ActionListener
         String user = textField.getText();   
         JOptionPane.showMessageDialog(this, "Sucessful login"); 
         dispose();  
-        content pages = new content();  
-        pages.setSize(150,300);
-        pages.setVisible(true);  
+        content pages = new content();    
     }
   
     public static void main(String arg[])  

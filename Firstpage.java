@@ -1,61 +1,41 @@
-import javax.swing.*;  
-import java.awt.*;  
-import java.awt.event.*;  
-  
-class Firstpage extends JFrame implements ActionListener  
-{  
-    JButton b1,b2;  
-    JPanel newPanel;  
-    JLabel newLabel;  
-      
-    Firstpage()  
-    {     
-          
-        newLabel = new JLabel();  
-        newLabel.setText("Welcome !!");        
-        
-        b1 = new JButton("Sign up"); 
-        b2 = new JButton("Login"); 
-           
-        newPanel = new JPanel(new GridLayout(3, 1));  
-        newPanel.add(newLabel);    
-        newPanel.add(b1); 
-        newPanel.add(b2); 
-        newPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 0));           
-        add(newPanel, BorderLayout.CENTER);  
-           
-        b1.addActionListener(this);             
-        b2.addActionListener(this);   
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+class Firstpage implements ActionListener
+{
+JFrame fr;
+JButton b1,b2;
 
-        setTitle("Trial App");         
-    } 
-    
-       
-    public void actionPerformed(ActionEvent ae)   
-    {  
-        if (ae.getSource()==b2){
-            dispose();  
-            loginpage pages = new loginpage();  
-            pages.setSize(300,100);
-            pages.setVisible(true); 
-        }
-        
-        else if (ae.getSource()==b1){
-            dispose();  
-            Registration pages = new Registration();  
-            pages.setSize(300,500);
-            pages.setVisible(true); 
-        }
-      
+Firstpage()
+{
+fr=new JFrame();
+fr.setLayout(null);
+fr.setSize(600,600);
+fr.setTitle("--JAVA MINI PROJECT--");
+Container c=fr.getContentPane();
+
+b1=new JButton("Login");
+b1.setBounds(150,250,100,30);
+fr.add(b1);
+b2=new JButton("Signup");
+b2.setBounds(300,250,100,30);
+fr.add(b2);
+b1.addActionListener(this);
+b2.addActionListener(this);
+fr.setVisible(true);
+}
+public static void main(String s[])
+{
+new Firstpage();
+}
+public void actionPerformed(ActionEvent e)
+{
+    if (e.getSource()==b1){ 
+        login pages = new login();  
     }
-
-
-    public static void main(String arg[])  
-    {  
-    Firstpage form = new Firstpage();  
-    form.setSize(300,90);  //set size of the frame  
-    form.setVisible(true);  //make form visible to the user  
-      
-    }  
-}  
     
+    else if (e.getSource()==b2){
+        register pages = new register();  
+    }
+}
+}
