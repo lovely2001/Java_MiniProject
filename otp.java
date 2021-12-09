@@ -43,6 +43,7 @@ class otp extends JFrame  implements ActionListener
         Verification pages = new Verification();  
         pages.setSize(300,100);
         pages.setVisible(true);  
+        pages.setLocationRelativeTo(null);
     }
         public static void main(String args[])
         {
